@@ -1,6 +1,12 @@
 package com.example.demo;
 
 public class StrutturaDati {
+	
+	//attributi
+	/**
+	 * 
+	 */
+	
 String PROGRAMMA;
 String ASSE;
 String LINEA;
@@ -190,6 +196,36 @@ public String getREVOCA() {
 public void setREVOCA(String rEVOCA) {
 	REVOCA = rEVOCA;
 }
+/**
+ * 
+ * @param pROGRAMMA nome programma dell'impresa
+ * @param aSSE
+ * @param lINEA
+ * @param aZIONE
+ * @param tITOLO_DEL_PROGETTO
+ * @param aMBITO_INTERVENTO
+ * @param sETTORE
+ * @param dATA_DI_AVVIO
+ * @param dURATA_DEL_PROGETTO
+ * @param cOSTO_COMPLESSIVO
+ * @param cONTRIBUTO_SPESE_RICHIESTO
+ * @param cONTRIBUTO_TOTALE_AMMESSO
+ * @param cONTRIBUTO_INVEST_RICHIESTO
+ * @param cONTRIBUTO_INVEST_AMMESSO
+ * @param cONTRIBUTO_INVEST_CONCESSO_PROVVISORIO
+ * @param cOFINANZIAMENTO_INVEST_BENEFICIARIO2
+ * @param cONTRIBUTO_SPESE_RICHIESTO2
+ * @param cONTRIBUTO_SPESE_AMMESSO1
+ * @param cONTRIBUTO_SPESE_CONCESSO_PROVVISORIO
+ * @param bENEFICIARIO
+ * @param cODICE_ATECO
+ * @param pROVINCIA
+ * @param lOCALIZZAZIONE_INVESTIMENTO
+ * @param cODICE_ISTAT
+ * @param sITO_WEB
+ * @param dESCRIZIONE_PROGETTO
+ * @param rEVOCA
+ */
 public StrutturaDati(String pROGRAMMA, String aSSE, String lINEA, String aZIONE, String tITOLO_DEL_PROGETTO,
 		String aMBITO_INTERVENTO, String sETTORE, String dATA_DI_AVVIO, String dURATA_DEL_PROGETTO,
 		String cOSTO_COMPLESSIVO, String cONTRIBUTO_SPESE_RICHIESTO, String cONTRIBUTO_TOTALE_AMMESSO,

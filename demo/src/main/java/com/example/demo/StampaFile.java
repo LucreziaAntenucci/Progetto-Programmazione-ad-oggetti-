@@ -9,15 +9,20 @@ package com.example.demo;
 	import java.util.List;
 
 	import org.springframework.util.NumberUtils;
-
+/**
+ * 
+ * @author Lucry
+ *
+ */
 
 	public class StampaFile
 	 { 
-
+/**
+ * 
+ */
 		private static final String COMMA_DELIMITER = ",";
 		@SuppressWarnings({ "rawtypes", "unchecked" })
 		List<StrutturaDati> lista =new ArrayList();
-		String[] valori;
 		public StampaFile() throws FileNotFoundException, IOException
 		{
 			try (BufferedReader br = new BufferedReader(new FileReader("dataset.csv"))) {
@@ -27,11 +32,15 @@ package com.example.demo;
 					while ((line = br.readLine()) != null) //legge ogni riga fino a quando non è arrivato alla fine del file 
 					{ 					  
 						
-					      String[] valori = line.split(COMMA_DELIMITER,28); //salva i valori del dataset in un array di stringhe
+						String[] values = line.split("\",\"");
+						for(String item: values) {
+						   item = item.replace("\"", "");
+						   System.out.println(item);
+					} //salva i valori del dataset in un array di stringhe
 					      
 					      //controlli sui valori double e int in modo che non contengano il valore null
 
-					      lista.add(new StrutturaDati (valori[0],valori[1],valori[2],valori[3],valori[4],valori[5],valori[6],valori[7],valori[8],valori[9],valori[10],valori[11],valori[12],valori[13],valori[14],valori[15],valori[16],valori[17],valori[18],valori[19],valori[20],valori[21],valori[22],valori[23],valori[24],valori[25],valori[26]));
+					      lista.add(new StrutturaDati (values[0],values[1],values[2],values[3],values[4],values[5],values[6],values[7],values[8],values[9],values[10],values[11],values[12],values[13],values[14],values[15],values[16],values[17],values[18],values[19],values[20],values[21],values[22],values[23],values[24],values[25],values[26]));
 					     //aggiunge i valori letti a una lista
 					}
 				}catch (IOException e) {
@@ -45,12 +54,5 @@ package com.example.demo;
 		public void setLista(List<StrutturaDati> lista) {
 			this.lista = lista;
 		}
-		public String[] getValori() {
-			return valori;
-		}
-		public void setValori(String[] valori) {
-			this.valori = valori;
-		}
-		
 		
 	}

@@ -19,11 +19,21 @@ import org.apache.commons.text.StringEscapeUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
-public class Metadati {
-		
-	private static final String COMMA_DELIMITER = ",";
+/** Classe per restituire i metadati (formato JSON) ovvero elenco degli attributi e del tipo della classe**/
+
+public class Metadati {	
+	
+	//attributi
+	/**
+	 * 
+	 */
 	String metadata ;
 	String[] values;
+	
+	//metodi
+	/**
+	 * 
+	 */
 	public Metadati() {
 		metadata="";
 	    try (BufferedReader br = new BufferedReader(new FileReader("dataset.csv"))) //file da leggere
@@ -43,7 +53,12 @@ public class Metadati {
 		      		}
 		      		String line;
 		      		line = br.readLine(); 	//legge la prima riga del dataset in modo da ricavarne i titoli
-		      		String[] valori = line.split(COMMA_DELIMITER,28);
+		      		String[] values = line.split("\",\"");
+		      		for(String item: values) {
+		      		   item = item.replace("\"", "");
+		      		   System.out.println(item);
+		      		}
+		      			
 		      		for (int j=0; j < listaParam.length; j++)
 		      		{   
 	 	 	    	
@@ -52,7 +67,7 @@ public class Metadati {
         	
 		      			JSONObject obj = new JSONObject();
 		      			obj.put("alias", campoCorrente.getName());
-		      			obj.put("sourceField", valori[j] );
+		      			obj.put("sourceField", values[j] );
 		      			obj.put("type", tipiParam[j].getName());
 		      			System.out.println(obj.toJSONString()+","); 
 		      			metadata=metadata+obj.toJSONString()+","; 

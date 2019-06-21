@@ -13,8 +13,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
-
+/**
+ * 
+ * @author Lucry
+ *
+ */
 public class Download {	
+	/**
+	 * 
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	public Download() throws IOException, ParseException
 	{
 	 File dataset = new File("dataset.csv");
